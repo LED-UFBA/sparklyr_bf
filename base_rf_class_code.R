@@ -10,7 +10,6 @@ library(randomForest)
 # source("D:/my_computer/Est_ML_2019/random_svm/random_machines_baseline_code.R")
 set.seed(42)
 
-setwd("D:/my_computer/Est_ML_2019/random_svm/bolsa_familia/")
 mtry<-trunc(c(0.25,0.5,1,2,4)*trunc(sqrt((ncol(list_data[[1]]$training)-1))),digits = 0)
 mtry<-mtry[mtry>=1 & mtry<=ncol(list_data[[1]]$training)]
 node_size<-c(5,10,25)
@@ -81,8 +80,8 @@ extract_grid_max<-function(resultado,list_data){
 }
 
 prediction_rf_one<-map(resultado_random_forest_one,~just_predict(model =.x,list_data = list_data))
-save(prediction_rf_one,file="classification/rf/pred_result_rf_pred_100_2_class_one_for_article.Rdata")
-save(resultado_random_forest_one,file="classification/rf/result_pred_100_2_class_one_for_article.Rdata")
+save(prediction_rf_one,file="pred_result_rf_pred_100_2_class_one_for_article.Rdata")
+save(resultado_random_forest_one,file="result_pred_100_2_class_one_for_article.Rdata")
 
 # save(prediction_rf_one,file="classification/rf/result_rf_pred_100_3_class_one.Rdata")
 # save(prediction_rf_one,file="classification/rf/result_rf_pred_100_4_class_one.Rdata")
