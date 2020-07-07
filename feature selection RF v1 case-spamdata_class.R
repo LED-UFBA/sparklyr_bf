@@ -124,6 +124,6 @@ imp.geral <- sort(Imp.geral,decreasing = T)
 barplot(imp.geral,las=2,space=0.7, border=F, col="orange")
 abline(h=imp.geral[corte.final],lwd=2,lty=6)
 
-var_sel<-vars[1:corte.final]
+selected_vars<-vars[1:corte.final]
 
-save(var_sel,file="var.selecionada.class.Rdata")
+save(selected_vars,file="var.selecionada.class.Rdata")
